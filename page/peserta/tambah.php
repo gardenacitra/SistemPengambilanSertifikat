@@ -25,14 +25,6 @@
                             <input class="form-control" name="pass" type="email"/>    
                         </div>
                         <div class="form-group">
-                            <label> Kursus </label>
-                            <select class="form-control" name="level">
-                                <option> == Pilih Kursus == </option>
-                                <option value="SAP">SAP</option>
-                                <option value="CISCO">CISCO</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
                             <label> Periode </label>
                             <input class="form-control" name="pass" type="periode"/>    
                         </div>
@@ -51,8 +43,8 @@
 
     if (isset($_POST['simpan'])) {
 
-        $sql = $koneksi->query("INSERT INTO tb_peserta (nim, nama, jurusan, no_telepon, email, kursus, periode)
-        VALUES ('$_POST[nim]', '$_POST[nama]', '$_POST[jurusan]', '$_POST[no_telepon]', '$_POST[email]', '$_POST[kursus]', '$_POST[periode]')");
+        $sql = $koneksi->query("INSERT INTO tb_peserta (nim, nama, jurusan, no_telepon, email, periode)
+        VALUES ('$_POST[nim]', '$_POST[nama]', '$_POST[jurusan]', '$_POST[no_telepon]', '$_POST[email]', '$_POST[periode]')");
 
         if ($sql) {
             ?>

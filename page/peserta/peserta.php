@@ -17,7 +17,6 @@
                                     <th>Jurusan</th>
                                     <th>No Telepon</th>
                                     <th>Email</th>
-                                    <th>Kursus</th>
                                     <th>Periode</th>
                                     <th width="19%">Aksi</th>
                                 </tr>
@@ -37,7 +36,6 @@
                                     <td><?php echo $data['jurusan']; ?></td>
                                     <td><?php echo $data['no_telepon']; ?></td>
                                     <td><?php echo $data['email']; ?></td>
-                                    <td><?php echo $data['kursus']; ?></td>
                                     <td><?php echo $data['periode']; ?></td>
                                     <td>
                                         <a href="?page=peserta&aksi=ubah&nim=<?php echo $data['nim']; ?>" class="btn btn-warning"><i class="fa fa-edit"></i> Ubah </a>

@@ -31,14 +31,6 @@
                             <input class="form-control" name="email" type="email" value="<?php echo $data['email']; ?>"/>    
                         </div>
                         <div class="form-group">
-                            <label> Kursus </label>
-                            <select class="form-control" name="kursus">
-                                <option> == Pilih Kursus == </option>
-                                <option value="SAP">SAP</option>
-                                <option value="CISCO">CISCO</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
                             <label> Periode </label>
                             <input class="form-control" name="periode" value="<?php echo $data['periode']; ?>"/>    
                         </div>
@@ -57,7 +49,7 @@
     if (isset($_POST['simpan'])) {
 
         $sql = $koneksi->query("UPDATE tb_peserta SET 
-        nim = '$_POST[nim]', nama = '$_POST[nama]', jurusan = '$_POST[jurusan]', no_telepon = '$_POST[no_telepon]', email = '$_POST[email]', kursus = '$_POST[kursus]', periode = '$_POST[periode]' WHERE nim = '$nim'");
+        nim = '$_POST[nim]', nama = '$_POST[nama]', jurusan = '$_POST[jurusan]', no_telepon = '$_POST[no_telepon]', email = '$_POST[email]', periode = '$_POST[periode]' WHERE nim = '$nim'");
 
         if ($sql) {
             ?>
