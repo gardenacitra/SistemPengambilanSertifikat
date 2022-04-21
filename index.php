@@ -142,12 +142,8 @@
                             } elseif ($page == "pengambilan" ) {
                                 if ($aksi == "" || $aksi == "cancel") {
                                     include "page/pengambilan/pengambilan.php";
-                                }elseif ($aksi == "tambah") {
-                                    include "page/pengambilan/tambah.php";
-                                }elseif ($aksi == "ubah") {
-                                    include "page/pengambilan/ubah.php";
-                                }elseif ($aksi == "hapus") {
-                                    include "page/pengambilan/hapus.php";
+                                }elseif ($aksi == "detail") {
+                                    include "page/pengambilan/detail.php";
                                 }
                             } elseif ($page == "") {
                                 include "home.php";

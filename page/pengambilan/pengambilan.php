@@ -5,9 +5,6 @@
             <div class="panel-heading"> Data Pengambilan Sertifikat </div>
                 <div class="panel-body">
                     <div class="table-responsive">
-                        <div>
-                            <a href="?page=pengambilan&aksi=tambah" class="btn btn-success" style="margin-top: 8px;"><i class="fa fa-plus"></i> Tambah Data </a>
-                        </div><br>
                         <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                             <thead>
                                 <tr>
@@ -38,8 +35,9 @@
                                         <span class="badge badge-success"><?php echo $data['status']; ?></span>
                                     </td>
                                     <td>
-                                        <a href="?page=pengambilan&aksi=ubah&nim=<?php echo $data['nim']; ?>" class="btn btn-warning"><i class="fa fa-edit"></i> Ubah </a>
-                                        <a onclick="return confirm('Anda yakin ingin menghapus ?')" href="?page=pengambilan&aksi=hapus&nim=<?php echo $data['nim']; ?>" class="btn btn-danger" ><i class="fa fa-trash"></i> Hapus </a>
+                                        <a href="?page=pengambilan&aksi=detail&nim=<?php echo $data['nim']; ?>" class="btn btn-primary"><i class="fa fa-eye"></i> Detail </a>
+                                        <!-- <a href="?page=pengambilan&aksi=ubah&nim=" class="btn btn-warning"><i class="fa fa-edit"></i> Ubah </a>
+                                        <a onclick="return confirm('Anda yakin ingin menghapus ?')" href="?page=pengambilan&aksi=hapus&nim=" class="btn btn-danger" ><i class="fa fa-trash"></i> Hapus </a> -->
                                     </td>
                                 </tr>
 

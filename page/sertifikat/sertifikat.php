@@ -16,6 +16,7 @@
                                     <th>Nama</th>
                                     <th>Kursus</th>
                                     <th>Ketersediaan</th>
+                                    <th>Status</th>
                                     <th width="19%">Aksi</th>
                                 </tr>
                             </thead>
@@ -23,7 +24,7 @@
 
                                 <?php
                                 $nomor = 1;
-                                $sql = $koneksi->query("SELECT * FROM tb_sertifikat");
+                                $sql = $koneksi->query("SELECT * FROM tb_sertifikat INNER JOIN tb_peserta ON tb_sertifikat.nim = tb_peserta.nim INNER JOIN tb_pengambilan ON tb_sertifikat.nim = tb_pengambilan.nim");
                                 while ($data = $sql->fetch_assoc()) {
                                 ?>
 
@@ -33,6 +34,7 @@
                                     <td><?php echo $data['nama']; ?></td>
                                     <td><?php echo $data['kursus']; ?></td>
                                     <td><?php echo $data['ketersediaan']; ?></td>
+                                    <td><?php echo $data['status']; ?></td>
                                     <td>
                                         <a href="?page=sertifikat&aksi=ubah&nim=<?php echo $data['nim']; ?>" class="btn btn-warning"><i class="fa fa-edit"></i> Ubah </a>
                                         <a onclick="return confirm('Anda yakin ingin menghapus ?')" href="?page=sertifikat&aksi=hapus&nim=<?php echo $data['nim']; ?>" class="btn btn-danger" ><i class="fa fa-trash"></i> Hapus </a>
