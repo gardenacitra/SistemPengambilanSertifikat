@@ -77,7 +77,7 @@
                             </ul>
                         </li> 
                         <li>
-                            <a href="blank.html"><i class="fa fa-calendar fa-2x"></i> Jadwal Pengambilan </a>
+                            <a href="?page=pengambilan&aksi="><i class="fa fa-calendar fa-2x"></i> Jadwal Pengambilan </a>
                         </li>
                         <li>
                             <a href="logout.php"> Logout </a>
@@ -138,6 +138,16 @@
                                     include "page/sertifikat/ubah.php";
                                 }elseif ($aksi == "hapus") {
                                     include "page/sertifikat/hapus.php";
+                                }
+                            } elseif ($page == "pengambilan" ) {
+                                if ($aksi == "" || $aksi == "cancel") {
+                                    include "page/pengambilan/pengambilan.php";
+                                }elseif ($aksi == "tambah") {
+                                    include "page/pengambilan/tambah.php";
+                                }elseif ($aksi == "ubah") {
+                                    include "page/pengambilan/ubah.php";
+                                }elseif ($aksi == "hapus") {
+                                    include "page/pengambilan/hapus.php";
                                 }
                             } elseif ($page == "") {
                                 include "home.php";
