@@ -18,15 +18,23 @@
                         </div>
                         <div class="form-group">
                             <label> No Telepon </label>
-                            <input class="form-control" name="pass" type="no_telepon"/>    
+                            <input class="form-control" name="no_telepon"/>    
                         </div>
                         <div class="form-group">
                             <label> Email </label>
-                            <input class="form-control" name="pass" type="email"/>    
+                            <input class="form-control" name="email" type="email"/>    
+                        </div>
+                        <div class="form-group">
+                            <label> Kursus </label>
+                            <select class="form-control" name="kursus">
+                                <option> == Pilih == </option>
+                                <option value="SAP">SAP</option>
+                                <option value="CISCO">CISCO</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label> Periode </label>
-                            <input class="form-control" name="pass" type="periode"/>    
+                            <input class="form-control" name="periode"/>    
                         </div>
                         <div class="col-md-12 bg-light text-right">
                             <a href="?page=peserta&aksi=cancel" class="btn btn-danger"> Kembali </a>
@@ -43,8 +51,8 @@
 
     if (isset($_POST['simpan'])) {
 
-        $sql = $koneksi->query("INSERT INTO tb_peserta (nim, nama, jurusan, no_telepon, email, periode)
-        VALUES ('$_POST[nim]', '$_POST[nama]', '$_POST[jurusan]', '$_POST[no_telepon]', '$_POST[email]', '$_POST[periode]')");
+        $sql = $koneksi->query("INSERT INTO tb_peserta (nim, nama, jurusan, no_telepon, email, kursus, periode)
+        VALUES ('$_POST[nim]', '$_POST[nama]', '$_POST[jurusan]', '$_POST[no_telepon]', '$_POST[email]', '$_POST[kursus]', '$_POST[periode]')");
 
         if ($sql) {
             ?>

@@ -61,7 +61,7 @@
                                     <a href="?page=peserta&aksi="> SAP </a>
                                 </li>
                                 <li>
-                                    <a href="?page=peserta_cisco&aksi="> CISCO </a>
+                                    <a href="#"> CISCO </a>
                                 </li>                            
                             </ul>
                         </li>  
@@ -69,10 +69,10 @@
                             <a href="#"><i class="fa fa-file fa-2x"></i> Data Sertifikat <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="?page=sertifikat_sap&aksi="> SAP </a>
+                                    <a href="?page=sertifikat&aksi="> SAP </a>
                                 </li>
                                 <li>
-                                    <a href="?page=sertifikat_cisco&aksi="> CISCO </a>
+                                    <a href="#"> CISCO </a>
                                 </li>                            
                             </ul>
                         </li> 
@@ -119,16 +119,6 @@
                                 } elseif ($aksi== "cetak") {
                                     include "page/peserta/form_laporan_peserta.php";
                                 }
-                            } elseif ($page == "peserta_cisco" ) {
-                                if ($aksi == "" || $aksi == "cancel") {
-                                    include "page/peserta_cisco/cisco.php";
-                                }elseif ($aksi == "tambah") {
-                                    include "page/peserta_cisco/tambah.php";
-                                }elseif ($aksi == "ubah") {
-                                    include "page/peserta_cisco/ubah.php";
-                                }elseif ($aksi == "hapus") {
-                                    include "page/peserta_cisco/hapus.php";
-                                }
                             } elseif ($page == "pengguna" ) {
                                 if ($aksi == "" || $aksi == "cancel") {
                                     include "page/pengguna/pengguna.php";
@@ -139,25 +129,15 @@
                                 }elseif ($aksi == "hapus") {
                                     include "page/pengguna/hapus.php";
                                 }
-                            } elseif ($page == "sertifikat_sap" ) {
+                            } elseif ($page == "sertifikat" ) {
                                 if ($aksi == "" || $aksi == "cancel") {
-                                    include "page/sertifikat_sap/sap.php";
+                                    include "page/sertifikat/sertifikat.php";
                                 }elseif ($aksi == "tambah") {
-                                    include "page/sertifikat_sap/tambah.php";
+                                    include "page/sertifikat/tambah.php";
                                 }elseif ($aksi == "ubah") {
-                                    include "page/sertifikat_sap/ubah.php";
+                                    include "page/sertifikat/ubah.php";
                                 }elseif ($aksi == "hapus") {
-                                    include "page/sertifikat_sap/hapus.php";
-                                }
-                            } elseif ($page == "sertifikat_cisco" ) {
-                                if ($aksi == "" || $aksi == "cancel") {
-                                    include "page/sertifikat_cisco/cisco.php";
-                                }elseif ($aksi == "tambah") {
-                                    include "page/sertifikat_cisco/tambah.php";
-                                }elseif ($aksi == "ubah") {
-                                    include "page/sertifikat_cisco/ubah.php";
-                                }elseif ($aksi == "hapus") {
-                                    include "page/sertifikat_cisco/hapus.php";
+                                    include "page/sertifikat/hapus.php";
                                 }
                             } elseif ($page == "") {
                                 include "home.php";

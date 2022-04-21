@@ -1,11 +1,11 @@
 <?php
 	$nim = $_GET['nim'];
-	$sql = $koneksi->query("SELECT * FROM tb_sertifikat_cisco WHERE nim = '$nim'");
+	$sql = $koneksi->query("SELECT * FROM tb_sertifikat WHERE nim = '$nim'");
 	$data = $sql->fetch_assoc();
 ?>
 
 <div class="panel panel-default">
-    <div class="panel-heading"> Ubah Data Sertifikat Kursus CISCO </div> 
+    <div class="panel-heading"> Ubah Data Sertifikat Kursus </div> 
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-12">
@@ -19,6 +19,14 @@
                             <input class="form-control" name="nama" value="<?php echo $data['nama']; ?>" readonly/>  
                         </div>
                         <div class="form-group">
+                            <label> Kursus </label>
+                            <select class="form-control" name="kursus">
+                                <option> == Pilih == </option>
+                                <option value="SAP">SAP</option>
+                                <option value="CISCO">CISCO</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label> Ketersediaan </label>
                             <select class="form-control" name="ketersediaan">
                                 <option> == Pilih == </option>
@@ -27,7 +35,7 @@
                             </select>
                         </div>
                         <div class="col-md-12 bg-light text-right">
-                            <a href="?page=sertifikat_cisco&aksi=cancel" class="btn btn-danger"> Kembali </a>
+                            <a href="?page=sertifikat&aksi=cancel" class="btn btn-danger"> Kembali </a>
                             <input type="submit" name="simpan" value="Simpan" class="btn btn-primary">
                         </div>
                     </form>
@@ -40,14 +48,14 @@
 <?php
     if (isset($_POST['simpan'])) {
 
-        $sql = $koneksi->query("UPDATE tb_sertifikat_cisco SET 
+        $sql = $koneksi->query("UPDATE tb_sertifikat SET 
         nim = '$_POST[nim]', nama = '$_POST[nama]', ketersediaan = '$_POST[ketersediaan]' WHERE nim = '$nim'");
 
         if ($sql) {
             ?>
                 <script type="text/javascript">
                     alert ("Data Berhasil Diubah");
-                    window.location.href="?page=sertifikat_cisco";
+                    window.location.href="?page=sertifikat";
                 </script>
             <?php
         }
