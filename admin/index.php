@@ -41,7 +41,7 @@
                     <?php echo date('d F Y'); ?> 
                 </div>
             </nav>   
-            <!-- NAV SIDE -->
+            <!-- NAV SIDE ADMIN -->
             <nav class="navbar-default navbar-side" role="navigation">
                 <div class="sidebar-collapse">
                     <ul class="nav" id="main-menu">
@@ -83,11 +83,41 @@
                             <a href="logout.php"> Logout </a>
                         </li>
                     </ul>
-                
                 </div>
-                
             </nav>  
-            <!-- /. NAV SIDE  -->
+            <!-- /NAV SIDE ADMIN/ -->
+
+            <!-- NAV SIDE PESERTA -->
+            <nav class="navbar-default navbar-side" role="navigation">
+                <div class="sidebar-collapse">
+                    <ul class="nav" id="main-menu">
+                        <li class="text-center">
+                            <img src="assets/img/find_user.png" class="user-image img-responsive"/>
+                        </li>
+                        <li>
+                            <a class="active-menu" href="index.php"><i class="fa fa-home fa-2x"></i> Dashboard </a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-file fa-2x"></i> Data Sertifikat <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="?page=sertifikat&aksi="> SAP </a>
+                                </li>
+                                <li>
+                                    <a href="#"> CISCO </a>
+                                </li>                            
+                            </ul>
+                        </li> 
+                        <li>
+                            <a href="?page=pengambilan&aksi="><i class="fa fa-calendar fa-2x"></i> Jadwal Pengambilan </a>
+                        </li>
+                        <li>
+                            <a href="logout.php"> Logout </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>  
+            <!-- /NAV SIDE PESERTA/ -->
             <div id="page-wrapper" >
                 <div id="page-inner">
                     <div class="row">
