@@ -35,9 +35,7 @@
                                         <span class="badge badge-success"><?php echo $data['status']; ?></span>
                                     </td>
                                     <td>
-                                        <a href="?page=pengambilan&aksi=detail&nim=<?php echo $data['nim']; ?>" class="btn btn-primary"><i class="fa fa-eye"></i> Detail </a>
-                                        <!-- <a href="?page=pengambilan&aksi=ubah&nim=" class="btn btn-warning"><i class="fa fa-edit"></i> Ubah </a>
-                                        <a onclick="return confirm('Anda yakin ingin menghapus ?')" href="?page=pengambilan&aksi=hapus&nim=" class="btn btn-danger" ><i class="fa fa-trash"></i> Hapus </a> -->
+                                        <a href="?page=pengambilan&aksi=&nim=<?php echo $data['nim']; ?>" class="btn btn-success"><i class="fa fa-check"></i> Selesai </a>
                                     </td>
                                 </tr>
 
