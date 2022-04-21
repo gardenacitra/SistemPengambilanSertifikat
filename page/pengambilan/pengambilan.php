@@ -33,12 +33,10 @@
                                     <td><?php echo $data['nim'] ?></td>
                                     <td><?php echo $data['nama']; ?></td>
                                     <td><?php echo $data['kursus']; ?></td>
-                                    <td><?php 
-                                            echo $data['periode'];
-                                            if 
-                                        ?>
+                                    <td><?php echo $data['periode']; ?></td>
+                                    <td>
+                                        <span class="badge badge-success"><?php echo $data['status']; ?></span>
                                     </td>
-                                    <td><?php echo $data['status']; ?></td>
                                     <td>
                                         <a href="?page=pengambilan&aksi=ubah&nim=<?php echo $data['nim']; ?>" class="btn btn-warning"><i class="fa fa-edit"></i> Ubah </a>
                                         <a onclick="return confirm('Anda yakin ingin menghapus ?')" href="?page=pengambilan&aksi=hapus&nim=<?php echo $data['nim']; ?>" class="btn btn-danger" ><i class="fa fa-trash"></i> Hapus </a>
