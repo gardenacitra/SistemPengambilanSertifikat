@@ -61,7 +61,7 @@
                                     <a href="?page=peserta&aksi="> SAP </a>
                                 </li>
                                 <li>
-                                    <a href="?page=peserta&aksi="> CISCO </a>
+                                    <a href="?page=peserta_cisco&aksi="> CISCO </a>
                                 </li>                            
                             </ul>
                         </li>  
@@ -118,6 +118,16 @@
                                     include "page/peserta/hapus.php";
                                 } elseif ($aksi== "cetak") {
                                     include "page/peserta/form_laporan_peserta.php";
+                                }
+                            } elseif ($page == "peserta_cisco" ) {
+                                if ($aksi == "" || $aksi == "cancel") {
+                                    include "page/peserta_cisco/cisco.php";
+                                }elseif ($aksi == "tambah") {
+                                    include "page/peserta_cisco/tambah.php";
+                                }elseif ($aksi == "ubah") {
+                                    include "page/peserta_cisco/ubah.php";
+                                }elseif ($aksi == "hapus") {
+                                    include "page/peserta_cisco/hapus.php";
                                 }
                             } elseif ($page == "pengguna" ) {
                                 if ($aksi == "" || $aksi == "cancel") {

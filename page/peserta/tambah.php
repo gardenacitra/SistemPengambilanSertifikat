@@ -37,7 +37,7 @@
                             <input class="form-control" name="pass" type="periode"/>    
                         </div>
                         <div class="col-md-12 bg-light text-right">
-                            <a href="?page=pengguna&aksi=cancel" class="btn btn-danger"> Kembali </a>
+                            <a href="?page=peserta&aksi=cancel" class="btn btn-danger"> Kembali </a>
                             <input type="submit" name="simpan" value="Simpan" class="btn btn-primary">
                         </div>
                     </form>
