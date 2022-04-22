@@ -61,7 +61,7 @@
                                     <a href="?page=peserta&aksi="> SAP </a>
                                 </li>
                                 <li>
-                                    <a href="#"> CISCO </a>
+                                    <a href="?page=peserta&aksi="> CISCO </a>
                                 </li>                            
                             </ul>
                         </li>  
@@ -72,8 +72,8 @@
                                     <a href="?page=sertifikat&aksi="> SAP </a>
                                 </li>
                                 <li>
-                                    <a href="#"> CISCO </a>
-                                </li>                            
+                                    <a href="?page=sertifikat&aksi=cisco"> CISCO </a>
+                                </li>                          
                             </ul>
                         </li> 
                         <li>
@@ -92,6 +92,8 @@
                     <div class="row">
                         <div class="col-md-12">
                         <?php
+                            $kursus = $_GET['kursus'];
+
                             $page = '';
                             if(isset($_GET['page'])) {
                                 $page = $_GET['page'];
@@ -109,40 +111,40 @@
                             if ($page == "peserta") {
                                 if ($aksi == "" || $aksi == "cancel") {
                                     include "page/peserta/peserta.php";
-                                } elseif ($aksi== "tambah") {
+                                } elseif ($aksi == "tambah") {
                                     include "page/peserta/tambah.php";
-                                } elseif ($aksi== "ubah") {
+                                } elseif ($aksi == "ubah") {
                                     include "page/peserta/ubah.php";
-                                } elseif ($aksi== "hapus") {
+                                } elseif ($aksi == "hapus") {
                                     include "page/peserta/hapus.php";
-                                } elseif ($aksi== "cetak") {
+                                } elseif ($aksi == "cetak") {
                                     include "page/peserta/form_laporan_peserta.php";
-                                }
+                                } 
                             } elseif ($page == "pengguna" ) {
                                 if ($aksi == "" || $aksi == "cancel") {
                                     include "page/pengguna/pengguna.php";
-                                }elseif ($aksi == "tambah") {
+                                } elseif ($aksi == "tambah") {
                                     include "page/pengguna/tambah.php";
-                                }elseif ($aksi == "ubah") {
+                                } elseif ($aksi == "ubah") {
                                     include "page/pengguna/ubah.php";
-                                }elseif ($aksi == "hapus") {
+                                } elseif ($aksi == "hapus") {
                                     include "page/pengguna/hapus.php";
                                 }
                             } elseif ($page == "sertifikat" ) {
                                 if ($aksi == "" || $aksi == "cancel") {
                                     include "page/sertifikat/sertifikat.php";
-                                }elseif ($aksi == "tambah") {
+                                } elseif ($aksi == "tambah") {
                                     include "page/sertifikat/tambah.php";
-                                }elseif ($aksi == "ubah") {
+                                } elseif ($aksi == "ubah") {
                                     include "page/sertifikat/ubah.php";
-                                }elseif ($aksi == "hapus") {
+                                } elseif ($aksi == "hapus") {
                                     include "page/sertifikat/hapus.php";
                                 }
                             } elseif ($page == "pengambilan" ) {
                                 if ($aksi == "" || $aksi == "cancel") {
                                     include "page/pengambilan/pengambilan.php";
-                                // }elseif ($aksi == "detail") {
-                                //     include "page/pengambilan/detail.php";
+                                } elseif ($aksi == "ambil") {
+                                    include "page/pengambilan/tambah.php";
                                 }
                             } elseif ($page == "") {
                                 include "home.php";
