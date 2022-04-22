@@ -28,8 +28,8 @@
                             <label> Hari </label>
                             <select class="form-control" name="hari">
                                 <option> == Pilih Hari == </option>
-                                <option value="selasa"> SELASA </option>
-                                <option value="kamis"> KAMIS </option>
+                                <option value="Selasa"> SELASA </option>
+                                <option value="Kamis"> KAMIS </option>
                             </select>
                         </div>
                         <div class="form-group">
@@ -38,7 +38,7 @@
                         </div>
                         <div class="col-md-12 bg-light text-right">
                             <a href="?page=&aksi=" class="btn btn-danger"> Kembali </a>
-                            <input type="submit" name="simpan" value="Simpan" class="btn btn-primary">
+                            <input type="submit" name="simpan" value="Ajukan" class="btn btn-primary">
                         </div>
                     </form>
                 </div>
@@ -46,3 +46,21 @@
         </div>  
     </div>  
 </div>
+
+<?php
+
+    if (isset($_POST['simpan'])) {
+
+        $sql = $koneksi->query("INSERT INTO tb_pengambilan (id_pengambilan, nim, hari, tanggal)
+        VALUES ('$_POST[id_pengambilan]', '$_POST[nim]', '$_POST[hari]', '$_POST[tanggal]')");
+
+        if ($sql) {
+            ?>
+            <script type = "text/javascript">
+                alert ("Data Berhasil Disimpan");
+                window.location.href="?page=";
+            </script>
+            <?php
+        }
+    }
+?>

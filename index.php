@@ -38,7 +38,8 @@
                     <a class="navbar-brand" href="index.html"> LPUG </a> 
                 </div>
                 <div style="color: white; padding: 15px 50px 5px 50px; float: right; font-size: 16px;"> 
-                    <?php echo date('d F Y'); ?> 
+                    <?php echo date('d F Y'); ?> &nbsp; 
+                    <a href="logout.php" class="btn btn-danger square-btn-adjust"> Logout </a> 
                 </div>
             </nav>   
             <!-- NAV SIDE ADMIN -->
@@ -78,9 +79,6 @@
                         </li> 
                         <li>
                             <a href="?page=pengambilan&aksi="><i class="fa fa-calendar fa-2x"></i> Jadwal Pengambilan </a>
-                        </li>
-                        <li>
-                            <a href="logout.php"> Logout </a>
                         </li>
                     </ul>
                 </div>

@@ -13,6 +13,8 @@
                                     <th>Nama</th>
                                     <th>Kursus</th>
                                     <th>Periode</th>
+                                    <th>Hari</th>
+                                    <th>Tanggal</th>
                                     <th>Status</th>
                                     <th width="19%">Aksi</th>
                                 </tr>
@@ -31,6 +33,8 @@
                                     <td><?php echo $data['nama']; ?></td>
                                     <td><?php echo $data['kursus']; ?></td>
                                     <td><?php echo $data['periode']; ?></td>
+                                    <td><?php echo $data['hari']; ?></td>
+                                    <td><?php echo date('d - m - Y', strtotime($data['tanggal'])); ?></td>
                                     <td>
                                         <span class="badge badge-success"><?php echo $data['status']; ?></span>
                                     </td>
