@@ -53,12 +53,6 @@
                             <a class="active-menu" href="index.php"><i class="fa fa-home fa-2x"></i> Dashboard </a>
                         </li>
                         <li>
-                            <a href="?page=formulir&aksi="><i class="fa fa-home fa-2x"></i> Formulir </a>
-                        </li>
-
-                        <?php if ($_SESSION['admin']) {?>
-
-                        <li>
                             <a href="?page=pengguna&aksi="><i class="fa fa-user fa-2x"></i> Data Pengguna </a>
                         </li>                                    
                         <li>
@@ -86,9 +80,6 @@
                         <li>
                             <a href="?page=pengambilan&aksi="><i class="fa fa-calendar fa-2x"></i> Jadwal Pengambilan </a>
                         </li>
-
-                        <?php } ?> 
-
                     </ul>
                 </div>
             </nav>  
@@ -150,14 +141,6 @@
                             } elseif ($page == "pengambilan" ) {
                                 if ($aksi == "" || $aksi == "cancel") {
                                     include "page/pengambilan/pengambilan.php";
-                                } elseif ($aksi == "ambil") {
-                                    include "page/pengambilan/tambah.php";
-                                }
-                            } elseif ($page == "formulir" ) {
-                                if ($aksi == "" || $aksi == "cancel") {
-                                    include "page/formulir/formulir.php";
-                                } elseif ($aksi == "ubah") {
-                                    include "page/formulir/ubah.php";
                                 }
                             } elseif ($page == "") {
                                 include "home.php";
