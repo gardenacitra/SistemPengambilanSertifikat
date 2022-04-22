@@ -52,34 +52,3 @@
         </div>
     </div>
 </div> 
-
-<?php
-// if (isset($_POST['selesai'])) {
-//     $id_pengambilan = $_GET['id_pengambilan'];
-
-//     $query = $koneksi->query("UPDATE tb_pengambilan SET status = 'Selesai' WHERE id_pengambilan = $id_pengambilan");
-// }
-?>
-
-<?php
-
-    if (isset($_POST['selesai'])) {
-
-        $sql = $koneksi->query("INSERT INTO tb_pengambilan (id_pengambilan, nim, hari, tanggal, status)
-        VALUES ('$_POST[id_pengambilan]', '$_POST[nim]', '$_POST[hari]', '$_POST[tanggal]', '')");
-
-        if ($sql) {
-            ?>
-            <script type = "text/javascript">
-                alert ("Data Berhasil Disimpan");
-                window.location.href="?page=pengambilan";
-            </script>
-            <?php
-        }
-    }
-?>
-
-<?php
-    $pengambilan = $_GET['nim'];
-    $koneksi->query("UPDATE tb_pengambilan SET status = 'Selesai' WHERE nim = $pengambilan");
-?>
