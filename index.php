@@ -1,3 +1,7 @@
+<?php
+$koneksi = new mysqli("localhost","root","","db_sistemlab");
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -5,6 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title> Gunadarma University Computing Center </title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" href="css/table.css">
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
@@ -47,8 +52,31 @@
         <section>
             <div class="container">
                 <h3>Search Sertifikat</h3>
-                <table>
-                    
+                <table border="1">
+                    <tr>
+                        <th width="50">No</th>
+                        <th width="150">NIM</th>
+                        <th width="350">Nama</th>
+                        <th width="150">Kursus</th>
+                        <th width="150">Ketersediaan</th>
+                    </tr>
+
+                    <?php
+                        $nomor = 1;
+                        $sql = $koneksi->query("SELECT * FROM tb_sertifikat INNER JOIN tb_peserta ON tb_sertifikat.nim = tb_peserta.nim INNER JOIN tb_pengambilan ON tb_sertifikat.nim = tb_pengambilan.nim");
+                        while ($data = $sql->fetch_assoc()) {
+                        ?>
+
+                    <tr>
+                        <td><?php echo $nomor++; ?></td>
+                        <td><?php echo $data['nim']; ?></td>
+                        <td><?php echo $data['nama']; ?></td>
+                        <td><?php echo $data['kursus']; ?></td>
+                        <td><?php echo $data['ketersediaan']; ?></td>
+                    </tr>
+
+                    <?php } ?>
+
                 </table>
             </div>
         </section>
