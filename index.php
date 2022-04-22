@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Perpustakaan</title>
+        <title> Gunadarma University Computing Center </title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -14,7 +14,7 @@
         <input type="checkbox" id="check">
         <div class="sidebar">
             <ul>
-                <li><a href="#about">About</li>
+                <li><a href="#about">Jadwal Pelayanan</li>
                 <li><a href="#contact">Contact</li>
             </ul>
         </div>
@@ -22,9 +22,9 @@
         <!-- HEADER -->
         <header>
             <div class="container">
-                <h1><a href="">Perpustakaan</a></h1>
+                <h1><a href=""> LPUG </a></h1>
                 <ul>
-                    <li><a href="#about">About</li>
+                    <li><a href="#about">Jadwal Pelayanan</li>
                     <li><a href="#contact">Contact</li>
                 </ul>
 
@@ -37,17 +37,16 @@
         <section class="banner">
             <div class="container">
                 <div class="banner-center">
-                    <h2>Sistem Informasi Perpustakaan<br>
-                    <!-- <span class="efek-ngetik"></span></h2> -->
-                    <p>SMA Negeri 2 Gunung Putri Bogor</p>
+                    <h2> Informasi Pelayanan Administrasi Kursus LPUG </h2> <br>
+                    <p> Lembaga Pengembangan Universitas Gunadarma </p>
                 </div>
             </div>
         </section>
 
-        <!-- SEARCH BOOK -->
+        <!-- SEARCH SERTIFIKAT -->
         <section>
             <div class="container">
-                <h3>Search Book</h3>
+                <h3>Search Sertifikat</h3>
                 <table>
                     
                 </table>
@@ -57,9 +56,15 @@
         <!-- ABOUT -->
         <section id="about">
             <div class="container">
-                <h3>About</h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <h3>Jadwal Pelayanan</h3>
+                <p>Pengambilan sertifikat dapat dilakukan di D431 pada hari Selasa dan Kamis pukul 12.00 - 15.00 WIB.</p>
+                <p>Pengambilan Sertifikat Kursus :</p>
+                <p>1. Konfirmasi via telp / email, apakah sudah tercetak atau belum.</p>
+                <p>2. Pengambilan di kampus D431.</p>
+                <p>Pelayanan 1 dan 2, hari Selasa dan Kamis pukul 12.00 - 15.00 WIB.</p>
+                <br>
+                <p>Untuk konfirmasi :</p>
+                <p>Siapkan Identitas Diri dan Bukti Bayar Kursus</p>
             </div>
         </section>
 
@@ -69,15 +74,15 @@
                 <h3>contact</h3>
                 <div class="col-3">
                     <h4>Alamat</h4>
-                    <p>Kota Wisata Cibubur</p>
+                    <p>Universitas Gunadarma Kampus D431</p>
                 </div>
                 <div class="col-3">
                     <h4>Email</h4>
-                    <p>sman2gunungputri@gmail.com</p>
+                    <p>tsgucc2014@gmail.com</p>
                 </div>
                 <div class="col-3">
                     <h4>Telp</h4>
-                    <p>021 1234 5678</p>
+                    <p>021 7888 1112 ext 447</p>
                 </div>
             </div>
         </section>
