@@ -51,8 +51,8 @@
 
     if (isset($_POST['simpan'])) {
 
-        $sql = $koneksi->query("INSERT INTO tb_pengambilan (id_pengambilan, nim, hari, tanggal)
-        VALUES ('$_POST[id_pengambilan]', '$_POST[nim]', '$_POST[hari]', '$_POST[tanggal]')");
+        $sql = $koneksi->query("INSERT INTO tb_pengambilan (id_pengambilan, nim, hari, tanggal, status)
+        VALUES ('$_POST[id_pengambilan]', '$_POST[nim]', '$_POST[hari]', '$_POST[tanggal]', 'pending')");
 
         if ($sql) {
             ?>
