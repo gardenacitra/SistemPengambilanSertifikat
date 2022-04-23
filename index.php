@@ -1,5 +1,5 @@
 <?php
-$koneksi = new mysqli("localhost","root","","db_sistemlab");
+$koneksi = new mysqli("localhost", "root", "", "db_sistemlab");
 ?>
 
 <!DOCTYPE html>
@@ -15,48 +15,50 @@ $koneksi = new mysqli("localhost","root","","db_sistemlab");
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
-
         <!-- SIDEBAR -->
         <input type="checkbox" id="check">
         <div class="sidebar">
             <ul>
-                <li><a href="#about">Jadwal Pelayanan</li>
-                <li><a href="#contact">Contact</li>
+                <li><a href="#about"> Jadwal Pelayanan </a></li>
+                <li><a href="#contact"> Contact </a></li>
             </ul>
         </div>
+        <!-- /SIDEBAR/ -->
 
         <!-- HEADER -->
         <header>
-            <div class="container">
+            <div class="container"> 
                 <h1><a href=""> LPUG </a></h1>
                 <ul>
-                    <li><a href="#about">Jadwal Pelayanan</li>
-                    <li><a href="#contact">Contact</li>
+                    <li><a href="#about">Jadwal Pelayanan</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
 
                 <!-- MENU MOBILE -->
                 <label for="check" class="mobile-menu"><i class="fa-solid fa-bars fa-2x"></i></i></label>
             </div>
         </header>
+        <!-- /HEADER/ -->
 
         <!-- BANNER -->
         <section class="banner">
             <div class="container">
                 <div class="banner-center">
-                    <h2> Informasi Pelayanan Administrasi Kursus LPUG </h2> <br>
+                    <h2> Informasi Pelayanan Administrasi Kursus LPUG </h2>
                     <p> Lembaga Pengembangan Universitas Gunadarma </p>
                 </div>
             </div>
         </section>
+        <!-- /BANNER/ -->
 
         <!-- SEARCH SERTIFIKAT -->
         <section>
             <div class="container">
-                <h3>Search Sertifikat</h3>
+                <h3> Search Sertifikat </h3>
                 <br></br>
-                <form>
+                <form action="">
                     <input type="text" placeholder="Search ..." aria-label="Search">
-                    <button href="formulir.php" type="submit">Search</button>
+                    <button href="formulir.php" type="submit"> Search </button>
                 </form>
                 <br></br>
                 <table border="1">
@@ -65,14 +67,14 @@ $koneksi = new mysqli("localhost","root","","db_sistemlab");
                         <th width="150">NIM</th>
                         <th width="350">Nama</th>
                         <th width="150">Kursus</th>
-                        <th width="150">Ketersediaan</th>
+                        <th width="150">Keterangan</th>
                     </tr>
 
                     <?php
-                        $nomor = 1;
-                        $sql = $koneksi->query("SELECT * FROM tb_sertifikat INNER JOIN tb_peserta ON tb_sertifikat.nim = tb_peserta.nim INNER JOIN tb_pengambilan ON tb_sertifikat.nim = tb_pengambilan.nim");
-                        while ($data = $sql->fetch_assoc()) {
-                        ?>
+                    $nomor = 1;
+                    $sql = $koneksi->query("SELECT * FROM tb_sertifikat INNER JOIN tb_peserta ON tb_sertifikat.nim = tb_peserta.nim INNER JOIN tb_pengambilan ON tb_sertifikat.nim = tb_pengambilan.nim");
+                    while($data = $sql->fetch_assoc()) {
+                    ?>
 
                     <tr>
                         <td><?php echo $nomor++; ?></td>
@@ -87,11 +89,12 @@ $koneksi = new mysqli("localhost","root","","db_sistemlab");
                 </table>
             </div>
         </section>
+        <!-- /SEARCH SERTIFIKAT/ -->
 
         <!-- ABOUT -->
         <section id="about">
             <div class="container">
-                <h3>Jadwal Pelayanan</h3>
+                <h3> Jadwal Pelayanan </h3>
                 <p>Pengambilan sertifikat dapat dilakukan di D431 pada hari Selasa dan Kamis pukul 12.00 - 15.00 WIB.</p>
                 <br>
                 <p>Pengambilan Sertifikat Kursus :</p>
@@ -103,34 +106,34 @@ $koneksi = new mysqli("localhost","root","","db_sistemlab");
                 <p>Siapkan Identitas Diri dan Bukti Bayar Kursus</p>
             </div>
         </section>
+        <!-- /ABOUT/ -->
 
         <!-- CONTACT -->
         <section id="contact">
             <div class="container">
-                <h3>contact</h3>
+                <h3> Contact </h3>
                 <div class="col-3">
-                    <h4>Alamat</h4>
-                    <p>Universitas Gunadarma Kampus D431</p>
+                    <h4> Alamat </h4>
+                    <p>Universitas Gunadarma Kampus D431 </p>
                 </div>
                 <div class="col-3">
-                    <h4>Email</h4>
-                    <p>tsgucc2014@gmail.com</p>
+                    <h4> Email </h4>
+                    <p> tsgucc2014@gmail.com </p>
                 </div>
                 <div class="col-3">
-                    <h4>Telp</h4>
+                    <h4> Telp </h4>
                     <p>021 7888 1112 ext 447</p>
                 </div>
             </div>
         </section>
+        <!-- /CONTACT/ -->
 
         <!-- FOOTER -->
         <footer>
             <div class="container">
-                <small>Copyright &copy; 2022 - Gardena Citra</small>
+                <small> Copyright &copy; 2022 - Gardena Citra </small>
             </div>
         </footer>
-
-        <script src="js/script.js"></script>
-
+        <!-- /FOOTER/ -->
     </body>
 </html>
