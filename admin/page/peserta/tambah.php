@@ -61,6 +61,13 @@
                 window.location.href="?page=peserta";
             </script>
             <?php
+        } else {
+            ?>
+            <script type = "text/javascript">
+                alert ("Data Gagal Disimpan");
+                window.location.href="?page=peserta";
+            </script>
+            <?php
         }
     }
 ?>

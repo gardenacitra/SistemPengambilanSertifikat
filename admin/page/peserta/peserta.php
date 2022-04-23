@@ -26,7 +26,13 @@
 
                                 <?php
                                 $nomor = 1;
-                                $sql = $koneksi->query("SELECT * FROM tb_peserta");
+                                if ($_GET['kursus'] == 'sap') {
+                                    $kursus = $_GET['kursus'];
+                                    $sql = $koneksi->query("SELECT * FROM tb_peserta WHERE kursus = '$kursus'");
+                                } elseif ($_GET['kursus'] == 'cisco') {
+                                    $kursus = $_GET['kursus'];
+                                    $sql = $koneksi->query("SELECT * FROM tb_peserta WHERE kursus = '$kursus'");
+                                }
                                 while ($data = $sql->fetch_assoc()) {
                                 ?>
 

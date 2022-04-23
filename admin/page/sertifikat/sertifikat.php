@@ -16,7 +16,7 @@
                                     <th>Nama</th>
                                     <th>Kursus</th>
                                     <th>Ketersediaan</th>
-                                    <th>Status</th>
+                                    <!-- <th>Status</th> -->
                                     <th width="19%">Aksi</th>
                                 </tr>
                             </thead>
@@ -24,17 +24,24 @@
 
                                 <?php
                                 $nomor = 1;
-                                $sql = $koneksi->query("SELECT * FROM tb_sertifikat INNER JOIN tb_peserta ON tb_sertifikat.nim = tb_peserta.nim INNER JOIN tb_pengambilan ON tb_sertifikat.nim = tb_pengambilan.nim");
+                                if ($_GET['kursus'] == 'sap') {
+                                    $kursus = $_GET['kursus'];
+                                    $sql = $koneksi->query("SELECT * FROM tb_sertifikat LEFT JOIN tb_peserta ON tb_sertifikat.nim = tb_peserta.nim WHERE kursus = '$kursus'");
+                                } elseif ($_GET['kursus'] == 'cisco') {
+                                    $kursus = $_GET['kursus'];
+                                    $sql = $koneksi->query("SELECT * FROM tb_sertifikat LEFT JOIN tb_peserta ON tb_sertifikat.nim = tb_peserta.nim WHERE kursus = '$kursus'");
+                                }
+                                // $sql = $koneksi->query("SELECT * FROM tb_sertifikat LEFT JOIN tb_peserta ON tb_sertifikat.nim = tb_peserta.nim");
                                 while ($data = $sql->fetch_assoc()) {
                                 ?>
-
+                                
                                 <tr>
                                     <td><?php echo $nomor++; ?></td>
-                                    <td><?php echo $data['nim'] ?></td>
+                                    <td><?php echo $data['nim']; ?></td>
                                     <td><?php echo $data['nama']; ?></td>
                                     <td><?php echo $data['kursus']; ?></td>
                                     <td><?php echo $data['ketersediaan']; ?></td>
-                                    <td><?php echo $data['status']; ?></td>
+                                    <!-- <td>X</td> -->
                                     <td>
                                         <a href="?page=sertifikat&aksi=ubah&nim=<?php echo $data['nim']; ?>" class="btn btn-warning"><i class="fa fa-edit"></i> Ubah </a>
                                         <a onclick="return confirm('Anda yakin ingin menghapus ?')" href="?page=sertifikat&aksi=hapus&nim=<?php echo $data['nim']; ?>" class="btn btn-danger" ><i class="fa fa-trash"></i> Hapus </a>

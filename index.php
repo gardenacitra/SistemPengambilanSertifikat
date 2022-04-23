@@ -10,6 +10,7 @@ $koneksi = new mysqli("localhost","root","","db_sistemlab");
         <title> Gunadarma University Computing Center </title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" href="css/table.css">
+        <link rel="stylesheet" href="css/search.css">
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
@@ -52,6 +53,12 @@ $koneksi = new mysqli("localhost","root","","db_sistemlab");
         <section>
             <div class="container">
                 <h3>Search Sertifikat</h3>
+                <br></br>
+                <form>
+                    <input type="text" placeholder="Search ..." aria-label="Search">
+                    <button href="formulir.php" type="submit">Search</button>
+                </form>
+                <br></br>
                 <table border="1">
                     <tr>
                         <th width="50">No</th>
@@ -86,6 +93,7 @@ $koneksi = new mysqli("localhost","root","","db_sistemlab");
             <div class="container">
                 <h3>Jadwal Pelayanan</h3>
                 <p>Pengambilan sertifikat dapat dilakukan di D431 pada hari Selasa dan Kamis pukul 12.00 - 15.00 WIB.</p>
+                <br>
                 <p>Pengambilan Sertifikat Kursus :</p>
                 <p>1. Konfirmasi via telp / email, apakah sudah tercetak atau belum.</p>
                 <p>2. Pengambilan di kampus D431.</p>

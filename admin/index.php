@@ -59,10 +59,10 @@
                             <a href="#"><i class="fa fa-user fa-2x"></i> Data Peserta Kursus <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="?page=peserta&aksi="> SAP </a>
+                                    <a href="?page=peserta&aksi=&kursus=sap"> SAP </a>
                                 </li>
                                 <li>
-                                    <a href="?page=peserta&aksi="> CISCO </a>
+                                    <a href="?page=peserta&aksi=&kursus=cisco"> CISCO </a>
                                 </li>                            
                             </ul>
                         </li>  
@@ -70,10 +70,10 @@
                             <a href="#"><i class="fa fa-file fa-2x"></i> Data Sertifikat <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="?page=sertifikat&aksi="> SAP </a>
+                                    <a href="?page=sertifikat&aksi=&kursus=sap"> SAP </a>
                                 </li>
                                 <li>
-                                    <a href="?page=sertifikat&aksi=cisco"> CISCO </a>
+                                    <a href="?page=sertifikat&aksi=&kursus=cisco"> CISCO </a>
                                 </li>                          
                             </ul>
                         </li> 

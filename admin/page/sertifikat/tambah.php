@@ -8,24 +8,24 @@
                             <label> NIM </label>
                             <input class="form-control" name="nim"/>  
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                             <label> Nama </label>
                             <input class="form-control" name="nama"/>  
-                        </div>
-                        <div class="form-group">
+                        </div> -->
+                        <!-- <div class="form-group">
                             <label> Kursus </label>
                             <select class="form-control" name="kursus">
                                 <option> == Pilih == </option>
-                                <option value="SAP">SAP</option>
-                                <option value="CISCO">CISCO</option>
+                                <option value="sap">SAP</option>
+                                <option value="cisco">CISCO</option>
                             </select>
-                        </div>
+                        </div> -->
                         <div class="form-group">
-                            <label> Ketersediaan </label>
+                            <label> Keterangan </label>
                             <select class="form-control" name="ketersediaan">
                                 <option> == Pilih == </option>
-                                <option value="Tersedia">Tersedia</option>
-                                <option value="Belum Tersedia">Belum Tersedia</option>
+                                <option value="tersedia">Tersedia</option>
+                                <option value="belum-tersedia">Belum Tersedia</option>
                             </select>
                         </div>
                         <div class="col-md-12 bg-light text-right">
@@ -43,13 +43,20 @@
 
     if (isset($_POST['simpan'])) {
 
-        $sql = $koneksi->query("INSERT INTO tb_sertifikat (nim, nama, ketersediaan)
-        VALUES ('$_POST[nim]', '$_POST[nama]', '$_POST[ketersediaan]')");
+        $sql = $koneksi->query("INSERT INTO tb_sertifikat (nim, ketersediaan)
+        VALUES ('$_POST[nim]', '$_POST[ketersediaan]')");
 
         if ($sql) {
             ?>
             <script type = "text/javascript">
                 alert ("Data Berhasil Disimpan");
+                window.location.href="?page=sertifikat";
+            </script>
+            <?php
+        } else {
+            ?>
+            <script type = "text/javascript">
+                alert ("Data Gagal Disimpan");
                 window.location.href="?page=sertifikat";
             </script>
             <?php
