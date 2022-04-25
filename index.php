@@ -1,5 +1,22 @@
 <?php
-$koneksi = new mysqli("localhost", "root", "", "db_sistemlab");
+
+if(isset($_POST['search']))
+{
+    $valueToSearch = $_POST['valueToSearch'];
+    $query = "SELECT * FROM tb_sertifikat LEFT JOIN tb_peserta ON tb_sertifikat.nim = tb_peserta.nim WHERE CONCAT ('nim', 'nama', 'kursus', 'ketersediaan') LIKE '%".$valueToSearch."%'";
+    $seacrh_result = filterTable($query);
+} else {
+    $query = "SELECT * FROM tb_sertifikat LEFT JOIN tb_peserta ON tb_sertifikat.nim = tb_peserta.nim";
+    $seacrh_result = filterTable($query);
+}
+
+function filterTable($query)
+{
+    $koneksi = new mysqli("localhost", "root", "", "db_sistemlab");
+    $filter_Result = mysqli_query($koneksi, $query);
+    return $filter_Result;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +36,7 @@ $koneksi = new mysqli("localhost", "root", "", "db_sistemlab");
         <input type="checkbox" id="check">
         <div class="sidebar">
             <ul>
+                <li><a href="#confirm">Konfirmasi Pengambilan</a></li>
                 <li><a href="#about"> Jadwal Pelayanan </a></li>
                 <li><a href="#contact"> Contact </a></li>
             </ul>
@@ -30,6 +48,7 @@ $koneksi = new mysqli("localhost", "root", "", "db_sistemlab");
             <div class="container"> 
                 <h1><a href=""> LPUG </a></h1>
                 <ul>
+                    <li><a href="#confirm">Konfirmasi Pengambilan</a></li>
                     <li><a href="#about">Jadwal Pelayanan</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -56,9 +75,9 @@ $koneksi = new mysqli("localhost", "root", "", "db_sistemlab");
             <div class="container">
                 <h3> Search Sertifikat </h3>
                 <br></br>
-                <form action="">
-                    <input type="text" placeholder="Search ..." aria-label="Search">
-                    <button href="formulir.php" type="submit"> Search </button>
+                <form action="index.php" method="POST">
+                    <input type="text" name="valueToSearch" placeholder="Search ..." aria-label="Search">
+                    <button type="submit" name="search"> Search </button>
                 </form>
                 <br></br>
                 <table border="1">
@@ -72,8 +91,9 @@ $koneksi = new mysqli("localhost", "root", "", "db_sistemlab");
 
                     <?php
                     $nomor = 1;
-                    $sql = $koneksi->query("SELECT * FROM tb_sertifikat INNER JOIN tb_peserta ON tb_sertifikat.nim = tb_peserta.nim INNER JOIN tb_pengambilan ON tb_sertifikat.nim = tb_pengambilan.nim");
-                    while($data = $sql->fetch_assoc()) {
+                    // $sql = $koneksi->query("SELECT * FROM tb_sertifikat INNER JOIN tb_peserta ON tb_sertifikat.nim = tb_peserta.nim INNER JOIN tb_pengambilan ON tb_sertifikat.nim = tb_pengambilan.nim");
+                    // while($data = $sql->fetch_assoc()) {
+                    while($data = mysqli_fetch_array($seacrh_result)) {
                     ?>
 
                     <tr>
@@ -90,6 +110,18 @@ $koneksi = new mysqli("localhost", "root", "", "db_sistemlab");
             </div>
         </section>
         <!-- /SEARCH SERTIFIKAT/ -->
+
+        <!-- KONFIRMASI PENGAMBILAN -->
+        <section id="confirm">
+            <div class="container">
+                <h3> Konfirmasi Pengambilan </h3>
+                <br></br>
+                <center><p>Klik tombol dibawah untuk melakukan perjanjian hari dan tanggal pengambilan Sertifikat</p></center>
+                <br></br>
+                <center><a href="formulir.php"><button type="submit"> Konfirmasi </button></a></center>
+            </div>
+        </section>
+        <!-- /KONFIRMASI PENGAMBILAN/ -->
 
         <!-- ABOUT -->
         <section id="about">
