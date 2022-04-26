@@ -4,31 +4,34 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title> Gunadarma University Computing Center </title>
-        <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link rel="stylesheet" href="css/form.css">
+        <link rel="stylesheet" href="css/style.css">
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
         <!-- HEADER -->
         <header>
-            <h1><a href=""> LPUG </a></h1>
-            <ul>
-                <li><a href="index.php">Home</a></li>
-            </ul>
+            <div class="container">
+                <h1><a href=""> LPUG </a></h1>
+                <ul>
+                    <li><a href="index.php">Home</a></li>
+                </ul>
+            </div>
         </header>
         <!-- /HEADER/ -->
         <!-- BANNER -->
         <section class="banner">
-            <div class="banner-center">
-                <h2> Informasi Pelayanan Administrasi Kursus LPUG </h2>
-                <p> Lembaga Pengembangan Universitas Gunadarma </p>
+            <div class="container">
+                <div class="banner-center">
+                    <h2> Informasi Pelayanan Administrasi Kursus LPUG </h2>
+                    <p> Lembaga Pengembangan Universitas Gunadarma </p>
+                </div>
             </div>
         </section>
         <!-- /BANNER/ -->
         <br></br>
         <!-- FORMULIR -->
-        <div class="container">
+        <div class="form">
             <center><h3>Formulir Konfirmasi Pengambilan Sertifikat</h3></center>
             <br></br>
             <form action="">

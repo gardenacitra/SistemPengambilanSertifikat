@@ -1,22 +1,5 @@
 <?php
-
-if(isset($_POST['search']))
-{
-    $valueToSearch = $_POST['valueToSearch'];
-    $query = "SELECT * FROM tb_sertifikat LEFT JOIN tb_peserta ON tb_sertifikat.nim = tb_peserta.nim WHERE CONCAT ('nim', 'nama', 'kursus', 'ketersediaan') LIKE '%".$valueToSearch."%'";
-    $seacrh_result = filterTable($query);
-} else {
-    $query = "SELECT * FROM tb_sertifikat LEFT JOIN tb_peserta ON tb_sertifikat.nim = tb_peserta.nim";
-    $seacrh_result = filterTable($query);
-}
-
-function filterTable($query)
-{
     $koneksi = new mysqli("localhost", "root", "", "db_sistemlab");
-    $filter_Result = mysqli_query($koneksi, $query);
-    return $filter_Result;
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -76,8 +59,8 @@ function filterTable($query)
                 <h3> Search Sertifikat </h3>
                 <br></br>
                 <form action="index.php" method="POST">
-                    <input type="text" name="valueToSearch" placeholder="Search ..." aria-label="Search">
-                    <button type="submit" name="search"> Search </button>
+                    <input type="text" name="search" placeholder="Search ..." aria-label="Search">
+                    <button type="submit"> Search </button>
                 </form>
                 <br></br>
                 <table border="1">
@@ -91,11 +74,13 @@ function filterTable($query)
 
                     <?php
                     $nomor = 1;
-                    // $sql = $koneksi->query("SELECT * FROM tb_sertifikat INNER JOIN tb_peserta ON tb_sertifikat.nim = tb_peserta.nim INNER JOIN tb_pengambilan ON tb_sertifikat.nim = tb_pengambilan.nim");
-                    // while($data = $sql->fetch_assoc()) {
-                    while($data = mysqli_fetch_array($seacrh_result)) {
-                    ?>
+                
+                    if(isset($_POST['search'])) {
+                        $cari = $_POST['search'];
+                        $sql = $koneksi->query("SELECT * FROM tb_sertifikat LEFT JOIN tb_peserta ON tb_peserta.nim = tb_sertifikat.nim WHERE tb_peserta.nama LIKE '%$cari%' OR tb_sertifikat.nim LIKE '%$cari%' ORDER BY tb_peserta.nama ASC");
+                        while($data = mysqli_fetch_array($sql, MYSQLI_ASSOC)) {
 
+                    ?>
                     <tr>
                         <td><?php echo $nomor++; ?></td>
                         <td><?php echo $data['nim']; ?></td>
@@ -104,8 +89,16 @@ function filterTable($query)
                         <td><?php echo $data['ketersediaan']; ?></td>
                     </tr>
 
+                    <?php  }
+                    } else { ?>
+                    <tr>
+                        <td><?php echo $nomor++; ?></td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
                     <?php } ?>
-
                 </table>
             </div>
         </section>
